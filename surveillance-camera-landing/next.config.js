@@ -205,3 +205,22 @@ module.exports = withBundleAnalyzer(nextConfig)
 //SITE_URL - Different values for development and production
 
 //SPLINE_SCENE_URL - URL for the 3D robot scene
+
+
+
+
+//Additional Configuration Options
+//You can also add:
+
+//js
+// For internationalization (if needed)
+//i18n: {
+  //locales: ['en', 'es', 'fr'],
+  //defaultLocale: 'en',
+//},
+
+// For CDN support (if using a CDN)
+//assetPrefix: process.env.NODE_ENV === 'production' ? 'https://cdn.example.com' : '',
+//This Next.js configuration provides optimal settings for your surveillance camera landing page, 
+//including image optimization, security headers, performance enhancements, and proper environment variable handling. 
+//It ensures your application is production-ready with best practices for security and performance.
