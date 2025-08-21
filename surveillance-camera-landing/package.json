@@ -1,0 +1,75 @@
+{
+  "name": "securevision-surveillance",
+  "version": "1.0.0",
+  "description": "Advanced surveillance systems landing page with dark/light theme and interactive 3D elements",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "analyze": "cross-env ANALYZE=true next build",
+    "export": "next build && next export"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@splinetool/react-spline": "^2.4.0",
+    "lucide-react": "^0.294.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8.0.0",
+    "tailwindcss": "^3.3.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0",
+    "@next/bundle-analyzer": "^14.0.0",
+    "cross-env": "^7.0.0"
+  },
+  "keywords": [
+    "surveillance",
+    "security",
+    "camera",
+    "react",
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "3d",
+    "dark-theme",
+    "landing-page"
+  ],
+  "author": "SecureVision Team <hello@securevision.example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/securevision-surveillance.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/securevision-surveillance/issues"
+  },
+  "homepage": "https://securevision.example.com",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
