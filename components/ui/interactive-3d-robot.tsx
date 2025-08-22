@@ -22,10 +22,6 @@ export function InteractiveRobotSpline({ scene, className }: InteractiveRobotSpl
         </div>
       }
     >
-      <Spline
-        scene={scene}
-        className={className} 
-      />
     </Suspense>
   );
 }
