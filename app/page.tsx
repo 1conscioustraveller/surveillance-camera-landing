@@ -11,7 +11,6 @@ import { Shield, Camera, Eye, Zap, Check, Play, Star, Menu, X } from 'lucide-rea
 
 export default function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
     // Prevent scrolling when mobile menu is open
