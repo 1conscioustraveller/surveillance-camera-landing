@@ -1,16 +1,12 @@
 // components/ui/interactive-3d-robot.tsx
 'use client';
 
-// Remove this import since we're not using Suspense anymore
-// import { Suspense } from 'react';
-
 interface InteractiveRobotSplineProps {
   scene: string;
   className?: string;
 }
 
 export function InteractiveRobotSpline({ scene, className }: InteractiveRobotSplineProps) {
-  // Remove the extra "return" keyword - just return the JSX directly
   return (
     <div className={`w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-900 via-gray-900 to-black ${className}`}>
       <div className="text-center text-white">
@@ -20,5 +16,4 @@ export function InteractiveRobotSpline({ scene, className }: InteractiveRobotSpl
       </div>
     </div>
   );
-  // Remove the extra closing ); here
 }
