@@ -8,7 +8,7 @@ import { PlaceholderRobot } from '@/components/ui/placeholder-robot';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, Camera, Eye, Zap, Check, Play, Star, Menu, X } from 'lucide-react'; //Removed ArrowRight
 
-const ROBOT_SCENE_URL = "https://prod.spline.design/PyzDhpQ9E5f1E3MT/scene.splinecode";
+//const ROBOT_SCENE_URL = "https://prod.spline.design/PyzDhpQ9E5f1E3MT/scene.splinecode";
 
 export default function HomePage() {
   const { theme } = useTheme();
