@@ -11,7 +11,7 @@ import { Shield, Camera, Eye, Zap, Check, Play, Star, Menu, X } from 'lucide-rea
 //const ROBOT_SCENE_URL = "https://prod.spline.design/PyzDhpQ9E5f1E3MT/scene.splinecode";
 
 export default function HomePage() {
-  const { theme } = useTheme();
+  const { setTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
