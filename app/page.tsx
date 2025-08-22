@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from '@/components/theme-provider';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { InteractiveRobotSpline } from '@/components/ui/interactive-3d-robot';
+import { PlaceholderRobot } from '@/components/ui/placeholder-robot';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, Camera, Eye, Zap, ArrowRight, Check, Play, Star, Menu, X } from 'lucide-react';
 
@@ -189,8 +189,7 @@ export default function HomePage() {
 
       {/* Hero Section with 3D Robot */}
       <section className="relative w-full h-screen overflow-hidden">
-        <InteractiveRobotSpline
-          scene={ROBOT_SCENE_URL}
+        <PlaceholderRobot
           className="absolute inset-0 z-0" 
         />
       
