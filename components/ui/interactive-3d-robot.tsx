@@ -2,11 +2,10 @@
 'use client';
 
 interface InteractiveRobotSplineProps {
-  scene: string;
   className?: string;
 }
 
-export function InteractiveRobotSpline({ scene, className }: InteractiveRobotSplineProps) {
+export function InteractiveRobotSpline({ className }: InteractiveRobotSplineProps) {
   return (
     <div className={`w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-900 via-gray-900 to-black ${className}`}>
       <div className="text-center text-white">
