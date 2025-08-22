@@ -2,7 +2,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTheme } from '@/components/theme-provider';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { PlaceholderRobot } from '@/components/ui/placeholder-robot';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
