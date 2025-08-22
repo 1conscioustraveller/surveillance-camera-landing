@@ -1,7 +1,7 @@
 // components/ui/interactive-3d-robot.tsx
 'use client';
 
-import { Suspense, lazy } from 'react';
+import { Suspense } from 'react';
 //const Spline = lazy(() => import('@splinetool/react-spline'));
 
 interface InteractiveRobotSplineProps {
