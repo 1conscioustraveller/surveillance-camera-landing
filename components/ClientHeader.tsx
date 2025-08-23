@@ -1,63 +1,47 @@
-// components/ClientHeader.tsx
-'use client';
+"use client"
 
-import { ThemeToggle } from '@/components/theme-toggle';
-import { Shield, Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import * as React from "react"
+import Link from "next/link"
+import { useTheme } from "next-themes"
+import { Button } from "@/components/ui/button"
+import { Moon, Sun } from "lucide-react"
 
 export function ClientHeader() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme()
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
-      <div className="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
-        <div className="flex items-center">
-          <Shield className="h-8 w-8 text-purple-500 mr-2" />
-          <span className="text-xl font-bold text-gray-900 dark:text-white">SecureVision</span>
-        </div>
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
         
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
-          <a href="#features" className="text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors">Features</a>
-          <a href="#products" className="text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors">Products</a>
-          <a href="#testimonials" className="text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors">Testimonials</a>
-          <a href="#faq" className="text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors">FAQ</a>
-        </nav>
-        
+        {/* Logo / Branding */}
+        <Link href="/" className="text-xl font-bold">
+          SecureVision
+        </Link>
+
+        {/* Right side (buttons, nav, theme toggle) */}
         <div className="flex items-center space-x-4">
-          <ThemeToggle />
-          <button className="bg-transparent border-2 border-purple-500 text-purple-500 px-4 py-2 rounded-lg font-semibold transition-all duration-300 hover:bg-purple-500 hover:text-white hover:shadow-lg hover:shadow-purple-500/50 neon-glow hidden md:block">
-            Get Started
-          </button>
-          
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          <Link href="/about">
+            <Button variant="ghost">About</Button>
+          </Link>
+          <Link href="/contact">
+            <Button variant="ghost">Contact</Button>
+          </Link>
+
+          {/* Theme toggle */}
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            aria-label="Toggle theme"
           >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6 text-gray-900 dark:text-white" />
+            {theme === "dark" ? (
+              <Sun className="h-5 w-5" />
             ) : (
-              <Menu className="h-6 w-6 text-gray-900 dark:text-white" />
+              <Moon className="h-5 w-5" />
             )}
-          </button>
+          </Button>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-          <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <a href="#features" className="text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors py-2">Features</a>
-            <a href="#products" className="text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors py-2">Products</a>
-            <a href="#testimonials" className="text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors py-2">Testimonials</a>
-            <a href="#faq" className="text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors py-2">FAQ</a>
-            <button className="bg-transparent border-2 border-purple-500 text-purple-500 px-4 py-2 rounded-lg font-semibold transition-all duration-300 hover:bg-purple-500 hover:text-white hover:shadow-lg hover:shadow-purple-500/50 neon-glow w-full">
-              Get Started
-            </button>
-          </nav>
-        </div>
-      )}
     </header>
-  );
+  )
 }
