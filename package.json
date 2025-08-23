@@ -12,6 +12,7 @@
     "analyze": "cross-env ANALYZE=true next build",
     "export": "next build && next export"
   },
+  {
   "dependencies": {
     "next": "^14.0.3",
     "react": "18.2.0",
@@ -23,7 +24,7 @@
     "@radix-ui/react-slot": "^1.0.0",
     "class-variance-authority": "^0.5.1"
   },
-    "resolutions": {
+  "overrides": {
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
