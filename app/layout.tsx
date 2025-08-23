@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Providers } from './providers'
 import { ClientHeader } from '@/components/ClientHeader'
+import { ThemeProvider } from 'next-themes'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,10 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} bg-white dark:bg-gray-950`}>
-        <Providers>
-          <ClientHeader />
-          <main>{children}</main>
-        </Providers>
+        {/* ThemeProvider should wrap Providers to ensure useTheme works */}
+        <ThemeProvider attribute="class" enableSystem defaultTheme="system">
+          <Providers>
+            <ClientHeader />
+            <main>{children}</main>
+          </Providers>
+        </ThemeProvider>
       </body>
     </html>
   )
