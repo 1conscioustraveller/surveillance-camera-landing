@@ -4,10 +4,16 @@ import * as React from "react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun, Loader2 } from "lucide-react"  // Added spinner
 
 export function ClientHeader() {
   const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+
+  // Ensure theme is mounted before rendering (avoids hydration mismatch)
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur">
@@ -34,7 +40,9 @@ export function ClientHeader() {
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? (
+            {!mounted ? (
+              <Loader2 className="h-5 w-5 animate-spin" /> // Spinner until theme loads
+            ) : theme === "dark" ? (
               <Sun className="h-5 w-5" />
             ) : (
               <Moon className="h-5 w-5" />
